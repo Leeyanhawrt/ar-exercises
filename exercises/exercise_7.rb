@@ -9,4 +9,10 @@ require_relative './exercise_6'
 puts "Exercise 7"
 puts "----------"
 
-# Your code goes here ...
+puts "What is your store name?"
+answer = STDIN.gets.chomp()
+
+store = Store.create(name: answer, annual_revenue: 1, mens_apparel: false, womens_apparel: false)
+store.errors.full_messages.each do |err|
+  puts err
+end
